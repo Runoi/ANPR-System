@@ -34,7 +34,7 @@
 
 2.  **Установите зависимости:**
     ```bash
-    pip install torch torchvision ultralytics opencv-python matplotlib jupyter
+    pip install torch torchvision ultralytics opencv-python matplotlib jupyter pandas
     ```
     **Важно:** Для обучения на GPU убедитесь, что установлена версия PyTorch с поддержкой CUDA. Правильную команду установки можно сгенерировать на [официальном сайте PyTorch](https://pytorch.org/).
 
