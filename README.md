@@ -17,19 +17,34 @@
 
 ```
 anpr_project/
-├── models/                     # Обученные и оптимизированные модели
-│   ├── ocr_crnn/
-│   │   ├── model/              #   - FP32 версия
-│   │   └── quant/              #   - INT8 (квантованная) версия
-│   └── yolo_detector/
-│       └── model/              #   - FP32 версия
+├── models/ # Финальные, готовые к использованию модели
+│ ├── ocr_crnn/
+│ │ ├── model/
+│ │ │ └── crnn_ocr_model_best.pth # Лучшая FP32 OCR модель
+│ │ └── quant/
+│ │ └── crnn_ocr_model_int8_fx.pth # Оптимизированная INT8 OCR модель
+│ │
+│ └── yolo/
+│       ├── model/
+│       │ └── best.pt # Лучшая FP32 YOLO модель
+│       └── quant/ 
 │
-├── venv/                       # Виртуальное окружение
+├── ocr_crnn/ # Рабочая директория для OCR
+│ ├── curves.png # Графики обучения
+│ ├── matrix.png # Матрица ошибок
+│ ├── ocr_train.ipynb # Jupyter Notebook для обучения OCR
+│ └── README.md # Документация по этапу OCR
+│
+├── yolo_finetun/ # Рабочая директория для YOLO
+│ ├── runs/ # Результаты экспериментов YOLO
+│ ├── README.md # Документация по этапу детекции
+│ └── yolotrain.ipynb # Jupyter Notebook для обучения YOLO
+│
 ├── .gitignore
-├── ocr_train.ipynb             # Jupyter Notebook для обучения OCR
-├── yolo_train.ipynb            # Jupyter Notebook для обучения детектора
-├── inference.py                # ✅ Главный исполняемый скрипт
-└── README.md                   # Эта документация
+├── anpr_result1.png # Примеры работы
+├── anpr_result2.png
+├── inference.py # ✅ Главный исполняемый скрипт
+└── README.md # Эта (главная) документация
 ```
 ## Датасеты
 
